@@ -21,3 +21,7 @@ Index.tsx always maps to the root of its group
 
  return <Stack screenOptions={{headerShown:false}} />; -->This is used to hide the header
 
+ Each "Tabs.Screen" maps directly to one of the tabs  in the "tabs" folder
+
+ <View></View> is similar to <div></div>
+
