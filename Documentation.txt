@@ -1,0 +1,23 @@
+Routing in  reactNative using expo works almost identical to NextJS
+The file name becomes the route path:
+i. No manual navigation config
+ii. no wiring together by hand
+iii. no router ways
+
+So every file inside the root folder will become a part of the navigation tree
+
+But unlike a single demo app, our root route isn't the homescreen, it works as an entry point that decides
+where the user goes
+
+Expo Router uses "route-group"
+Route-group is a folder wrapped in paranthesis, which lets us organise related screens into folders without adding
+that folder name to the url
+
+
+ExpoRouter uses "stack" Navigation by default and each layout adds its own header
+So, just like the root layout wraps all the routes, we can also create a layout specifically for the auth group
+
+Index.tsx always maps to the root of its group
+
+ return <Stack screenOptions={{headerShown:false}} />; -->This is used to hide the header
+
