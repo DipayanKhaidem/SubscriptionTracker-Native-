@@ -25,3 +25,8 @@ Index.tsx always maps to the root of its group
 
  <View></View> is similar to <div></div>
 
+<SafeAreaView/> is a React Native component that automatically applies padding to render content
+within safe, visible boundaries, avoiding obstructions like notches, rounded corners, and status bars
+
+In ReactNative the runtime doesnt automatically know the files sitting in ur assets folder,
+so we need to explicitly load them before any UI renders, and thats what expo-font handles
