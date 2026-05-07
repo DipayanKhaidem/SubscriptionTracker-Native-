@@ -1,19 +1,21 @@
 import "@/global.css"
 
-import {Image,Text , View } from "react-native";
+import {FlatList, Image, Text, View} from "react-native";
 import {styled} from "nativewind";
 import images from "@/constants/images";
 import {SafeAreaView as RNSafeAreaView} from "react-native-safe-area-context";
-import {HOME_BALANCE, HOME_USER} from "@/constants/data";
+import {HOME_BALANCE, HOME_USER, UPCOMING_SUBSCRIPTIONS} from "@/constants/data";
 import { icons } from "@/constants/icons";
 import {formatCurrency} from "@/lib/utils";
 import dayjs from "dayjs";
 import ListHeading from "@/components/ListHeading";
+import UpcomingSubscriptionCard from "@/components/UpcomingSubscriptionCard";
 
 
 const SafeAreaView = styled(RNSafeAreaView);
 export default function App() {
 
+    // @ts-ignore
     return (
         <SafeAreaView className="flex-1 bg-background p-5">
             <View className="home-header">
@@ -40,6 +42,21 @@ export default function App() {
 
             <View>
                 <ListHeading title="Upcoming"></ListHeading>
+                {/*<UpcomingSubscriptionCard data={UPCOMING_SUBSCRIPTIONS[0]}/>*/}
+                <FlatList
+                    data={UPCOMING_SUBSCRIPTIONS}
+                    renderItem={({item})=>(
+                        <UpcomingSubscriptionCard {...item} /> )}
+                        keyExtractor={(item)=>item.id}
+                        horizontal
+                        showsHorizontalScrollIndicator={false}
+                    ListEmptyComponent={
+                        <Text className="home-empty-state">
+                            No Upcoming renewals yet.
+                        </Text>
+                }
+
+                    />
             </View>
             <View>
                 <ListHeading title="All Subscriptions"></ListHeading>
