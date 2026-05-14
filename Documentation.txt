@@ -30,3 +30,9 @@ within safe, visible boundaries, avoiding obstructions like notches, rounded cor
 
 In ReactNative the runtime doesnt automatically know the files sitting in ur assets folder,
 so we need to explicitly load them before any UI renders, and thats what expo-font handles
+
+ {/*This is used to wrap the all the things above the scrollable list*/}
+                   ListHeaderComponent={()=><>
+                   .....</>} , making all the things scrollable
+
+contentContainerClassName="pb-30" -->This is for the bottom padding
