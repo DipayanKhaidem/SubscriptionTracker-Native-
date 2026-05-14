@@ -36,3 +36,5 @@ so we need to explicitly load them before any UI renders, and thats what expo-fo
                    .....</>} , making all the things scrollable
 
 contentContainerClassName="pb-30" -->This is for the bottom padding
+
+Go to clerk for authentication setup and copy the key from expo tab to ur .env file
